@@ -1,0 +1,53 @@
+name: New Data Source
+description: Request integration with a new OSINT data source
+title: "[Source]: "
+labels: ["enhancement", "new-source"]
+body:
+  - type: markdown
+    attributes:
+      value: Want us to integrate a new OSINT data source? Tell us about it.
+
+  - type: input
+    id: source
+    attributes:
+      label: Data source name
+      placeholder: "e.g., ZoomEye, BinaryEdge, GreyNoise"
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: API documentation URL
+      placeholder: "https://..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: auth
+    attributes:
+      label: Authentication
+      options:
+        - Free (no API key)
+        - Free tier available (API key required)
+        - Paid only
+    validations:
+      required: true
+
+  - type: textarea
+    id: tools
+    attributes:
+      label: Suggested tools
+      description: What tools/endpoints would be most useful?
+      placeholder: |
+        - Host lookup by IP
+        - Search by query
+        - ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Why this source?
+      description: What makes this source valuable for OSINT?
