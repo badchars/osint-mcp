@@ -27,9 +27,9 @@
 <p align="center">
   <br>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp/main/.github/banner-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp/main/.github/banner-light.svg">
-    <img alt="osint-mcp" src="https://raw.githubusercontent.com/badchars/osint-mcp/main/.github/banner-dark.svg" width="700">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp-server/main/.github/banner-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp-server/main/.github/banner-light.svg">
+    <img alt="osint-mcp-server" src="https://raw.githubusercontent.com/badchars/osint-mcp-server/main/.github/banner-dark.svg" width="700">
   </picture>
 </p>
 
@@ -53,7 +53,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/osint-mcp"><img src="https://img.shields.io/npm/v/osint-mcp.svg" alt="npm"></a>
+  <a href="https://www.npmjs.com/package/osint-mcp-server"><img src="https://img.shields.io/npm/v/osint-mcp-server.svg" alt="npm"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
   <img src="https://img.shields.io/badge/runtime-Bun-f472b6" alt="Bun">
   <img src="https://img.shields.io/badge/protocol-MCP-8b5cf6" alt="MCP">
@@ -83,10 +83,10 @@
   المجموع: أكثر من 45 دقيقة لكل هدف، معظمها في التنقل بين السياقات
 ```
 
-**osint-mcp** يمنح وكيل الذكاء الاصطناعي 37 أداة عبر 12 مصدر بيانات من خلال [بروتوكول سياق النموذج](https://modelcontextprotocol.io). يستعلم الوكيل من جميع المصادر بالتوازي، ويربط البيانات، ويحدد المخاطر، ويقدم صورة استخباراتية موحّدة &mdash; في محادثة واحدة.
+**osint-mcp-server** يمنح وكيل الذكاء الاصطناعي 37 أداة عبر 12 مصدر بيانات من خلال [بروتوكول سياق النموذج](https://modelcontextprotocol.io). يستعلم الوكيل من جميع المصادر بالتوازي، ويربط البيانات، ويحدد المخاطر، ويقدم صورة استخباراتية موحّدة &mdash; في محادثة واحدة.
 
 ```
-مع osint-mcp:
+مع osint-mcp-server:
   أنت: "قم باستطلاع كامل لـ target.com"
 
   الوكيل: → DNS: 4 سجلات A، 3 MX (Google Workspace)، 2 NS
@@ -106,14 +106,14 @@
 
 ## ما الفرق
 
-أدوات الاستخبارات مفتوحة المصدر الحالية تمنحك بيانات خام من مصدر واحد في كل مرة. osint-mcp يمنح وكيل الذكاء الاصطناعي القدرة على **التحليل عبر جميع المصادر في وقت واحد**.
+أدوات الاستخبارات مفتوحة المصدر الحالية تمنحك بيانات خام من مصدر واحد في كل مرة. osint-mcp-server يمنح وكيل الذكاء الاصطناعي القدرة على **التحليل عبر جميع المصادر في وقت واحد**.
 
 <table>
 <thead>
 <tr>
 <th></th>
 <th>الاستخبارات التقليدية</th>
-<th>osint-mcp</th>
+<th>osint-mcp-server</th>
 </tr>
 </thead>
 <tbody>
@@ -155,7 +155,7 @@
 <tr>
 <td><b>الإعداد</b></td>
 <td>تثبيت كل أداة وإدارة كل إعداد</td>
-<td><code>npx osint-mcp</code> &mdash; أمر واحد، بدون إعداد</td>
+<td><code>npx osint-mcp-server</code> &mdash; أمر واحد، بدون إعداد</td>
 </tr>
 </tbody>
 </table>
@@ -167,7 +167,7 @@
 ### الخيار 1: npx (بدون تثبيت)
 
 ```bash
-npx osint-mcp
+npx osint-mcp-server
 ```
 
 21 أداة استخبارات مفتوحة المصدر عامة تعمل فوراً. لا حاجة لمفاتيح API.
@@ -175,8 +175,8 @@ npx osint-mcp
 ### الخيار 2: استنساخ
 
 ```bash
-git clone https://github.com/badchars/osint-mcp.git
-cd osint-mcp
+git clone https://github.com/badchars/osint-mcp-server.git
+cd osint-mcp-server
 bun install
 ```
 
@@ -200,10 +200,10 @@ export CENSYS_API_SECRET=your-secret     # مطلوب مع CENSYS_API_ID
 
 ```bash
 # مع npx
-claude mcp add osint-mcp -- npx osint-mcp
+claude mcp add osint-mcp-server -- npx osint-mcp-server
 
 # مع الاستنساخ المحلي
-claude mcp add osint-mcp -- bun run /path/to/osint-mcp/src/index.ts
+claude mcp add osint-mcp-server -- bun run /path/to/osint-mcp-server/src/index.ts
 ```
 
 </details>
@@ -218,7 +218,7 @@ claude mcp add osint-mcp -- bun run /path/to/osint-mcp/src/index.ts
   "mcpServers": {
     "osint": {
       "command": "npx",
-      "args": ["-y", "osint-mcp"],
+      "args": ["-y", "osint-mcp-server"],
       "env": {
         "SHODAN_API_KEY": "optional",
         "VT_API_KEY": "optional",
@@ -236,7 +236,7 @@ claude mcp add osint-mcp -- bun run /path/to/osint-mcp/src/index.ts
 <details>
 <summary><b>Cursor / Windsurf / عملاء MCP الآخرون</b></summary>
 
-نفس تنسيق إعدادات JSON. وجّه الأمر إلى `npx osint-mcp` أو مسار التثبيت المحلي.
+نفس تنسيق إعدادات JSON. وجّه الأمر إلى `npx osint-mcp-server` أو مسار التثبيت المحلي.
 
 </details>
 
@@ -580,7 +580,7 @@ src/
 | [cloud-audit-mcp](https://github.com/badchars/cloud-audit-mcp) | أمان السحابة (AWS/Azure/GCP) | 38 أداة، أكثر من 60 فحصاً |
 | [github-security-mcp](https://github.com/badchars/github-security-mcp) | الوضع الأمني لـ GitHub | 39 أداة، 45 فحصاً |
 | [cve-mcp](https://github.com/badchars/cve-mcp) | استخبارات الثغرات | 23 أداة، 5 مصادر |
-| **osint-mcp** | **الاستخبارات مفتوحة المصدر والاستطلاع** | **37 أداة، 12 مصدراً** |
+| **osint-mcp-server** | **الاستخبارات مفتوحة المصدر والاستطلاع** | **37 أداة، 12 مصدراً** |
 
 ---
 

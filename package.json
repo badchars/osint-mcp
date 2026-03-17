@@ -1,10 +1,10 @@
 {
-  "name": "osint-mcp",
+  "name": "osint-mcp-server",
   "version": "0.1.0",
   "description": "OSINT intelligence MCP server — Shodan, VirusTotal, SecurityTrails, Censys, DNS, WHOIS, crt.sh, Wayback, BGP",
   "type": "module",
   "bin": {
-    "osint-mcp": "dist/index.js"
+    "osint-mcp-server": "dist/index.js"
   },
   "files": [
     "dist/"
@@ -15,17 +15,22 @@
     "prepublishOnly": "npm run build"
   },
   "keywords": [
-    "mcp", "osint", "shodan", "virustotal", "censys", "securitytrails",
-    "dns", "whois", "recon", "security", "intelligence",
-    "ai", "agent", "model-context-protocol"
+    "mcp", "model-context-protocol", "osint", "open-source-intelligence",
+    "reconnaissance", "recon", "security", "cybersecurity", "infosec",
+    "penetration-testing", "pentest", "bug-bounty", "threat-intelligence",
+    "attack-surface", "subdomain-enumeration", "domain-intelligence",
+    "shodan", "virustotal", "censys", "securitytrails",
+    "dns", "whois", "bgp", "geoip", "wayback-machine", "crtsh",
+    "certificate-transparency", "ip-lookup", "hackertarget",
+    "ai", "ai-agent", "claude", "llm"
   ],
   "author": "Orhan Yildirim <contact@orhanyildirim.us> (https://orhanyildirim.us)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/badchars/osint-mcp.git"
+    "url": "https://github.com/badchars/osint-mcp-server.git"
   },
-  "homepage": "https://github.com/badchars/osint-mcp",
+  "homepage": "https://github.com/badchars/osint-mcp-server",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.1",
     "zod": "^3.24.4"

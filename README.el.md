@@ -27,9 +27,9 @@
 <p align="center">
   <br>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp/main/.github/banner-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp/main/.github/banner-light.svg">
-    <img alt="osint-mcp" src="https://raw.githubusercontent.com/badchars/osint-mcp/main/.github/banner-dark.svg" width="700">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp-server/main/.github/banner-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp-server/main/.github/banner-light.svg">
+    <img alt="osint-mcp-server" src="https://raw.githubusercontent.com/badchars/osint-mcp-server/main/.github/banner-dark.svg" width="700">
   </picture>
 </p>
 
@@ -53,7 +53,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/osint-mcp"><img src="https://img.shields.io/npm/v/osint-mcp.svg" alt="npm"></a>
+  <a href="https://www.npmjs.com/package/osint-mcp-server"><img src="https://img.shields.io/npm/v/osint-mcp-server.svg" alt="npm"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
   <img src="https://img.shields.io/badge/runtime-Bun-f472b6" alt="Bun">
   <img src="https://img.shields.io/badge/protocol-MCP-8b5cf6" alt="MCP">
@@ -83,10 +83,10 @@
   Σύνολο: 45+ λεπτά ανά στόχο, το μεγαλύτερο μέρος εναλλαγή πλαισίων
 ```
 
-Το **osint-mcp** δίνει στον παράγοντα AI σας 37 εργαλεία σε 12 πηγές δεδομένων μέσω του [Model Context Protocol](https://modelcontextprotocol.io). Ο παράγοντας υποβάλλει ερωτήματα σε όλες τις πηγές παράλληλα, συσχετίζει δεδομένα, εντοπίζει κινδύνους και παρουσιάζει μια ενοποιημένη εικόνα πληροφοριών &mdash; σε μια μόνο συζήτηση.
+Το **osint-mcp-server** δίνει στον παράγοντα AI σας 37 εργαλεία σε 12 πηγές δεδομένων μέσω του [Model Context Protocol](https://modelcontextprotocol.io). Ο παράγοντας υποβάλλει ερωτήματα σε όλες τις πηγές παράλληλα, συσχετίζει δεδομένα, εντοπίζει κινδύνους και παρουσιάζει μια ενοποιημένη εικόνα πληροφοριών &mdash; σε μια μόνο συζήτηση.
 
 ```
-Με το osint-mcp:
+Με το osint-mcp-server:
   Εσείς: "Κάνε πλήρη αναγνώριση στο target.com"
 
   Παράγοντας: → DNS: 4 εγγραφές A, 3 MX (Google Workspace), 2 NS
@@ -106,14 +106,14 @@
 
 ## Πώς Είναι Διαφορετικό
 
-Τα υπάρχοντα εργαλεία OSINT σας δίνουν ακατέργαστα δεδομένα από μία πηγή τη φορά. Το osint-mcp δίνει στον παράγοντα AI σας τη δυνατότητα να **συλλογίζεται σε όλες τις πηγές ταυτόχρονα**.
+Τα υπάρχοντα εργαλεία OSINT σας δίνουν ακατέργαστα δεδομένα από μία πηγή τη φορά. Το osint-mcp-server δίνει στον παράγοντα AI σας τη δυνατότητα να **συλλογίζεται σε όλες τις πηγές ταυτόχρονα**.
 
 <table>
 <thead>
 <tr>
 <th></th>
 <th>Παραδοσιακό OSINT</th>
-<th>osint-mcp</th>
+<th>osint-mcp-server</th>
 </tr>
 </thead>
 <tbody>
@@ -155,7 +155,7 @@
 <tr>
 <td><b>Εγκατάσταση</b></td>
 <td>Εγκατάσταση κάθε εργαλείου, διαχείριση κάθε διαμόρφωσης</td>
-<td><code>npx osint-mcp</code> &mdash; μία εντολή, μηδενική διαμόρφωση</td>
+<td><code>npx osint-mcp-server</code> &mdash; μία εντολή, μηδενική διαμόρφωση</td>
 </tr>
 </tbody>
 </table>
@@ -167,7 +167,7 @@
 ### Επιλογή 1: npx (χωρίς εγκατάσταση)
 
 ```bash
-npx osint-mcp
+npx osint-mcp-server
 ```
 
 21 δημόσια εργαλεία OSINT λειτουργούν αμέσως. Δεν απαιτούνται κλειδιά API.
@@ -175,8 +175,8 @@ npx osint-mcp
 ### Επιλογή 2: Κλωνοποίηση
 
 ```bash
-git clone https://github.com/badchars/osint-mcp.git
-cd osint-mcp
+git clone https://github.com/badchars/osint-mcp-server.git
+cd osint-mcp-server
 bun install
 ```
 
@@ -200,10 +200,10 @@ export CENSYS_API_SECRET=your-secret     # Απαιτείται με το CENSYS
 
 ```bash
 # Με npx
-claude mcp add osint-mcp -- npx osint-mcp
+claude mcp add osint-mcp-server -- npx osint-mcp-server
 
 # Με τοπικό κλώνο
-claude mcp add osint-mcp -- bun run /path/to/osint-mcp/src/index.ts
+claude mcp add osint-mcp-server -- bun run /path/to/osint-mcp-server/src/index.ts
 ```
 
 </details>
@@ -218,7 +218,7 @@ claude mcp add osint-mcp -- bun run /path/to/osint-mcp/src/index.ts
   "mcpServers": {
     "osint": {
       "command": "npx",
-      "args": ["-y", "osint-mcp"],
+      "args": ["-y", "osint-mcp-server"],
       "env": {
         "SHODAN_API_KEY": "optional",
         "VT_API_KEY": "optional",
@@ -236,7 +236,7 @@ claude mcp add osint-mcp -- bun run /path/to/osint-mcp/src/index.ts
 <details>
 <summary><b>Cursor / Windsurf / άλλοι πελάτες MCP</b></summary>
 
-Ίδια μορφή διαμόρφωσης JSON. Κατευθύνετε την εντολή στο `npx osint-mcp` ή στη διαδρομή της τοπικής σας εγκατάστασης.
+Ίδια μορφή διαμόρφωσης JSON. Κατευθύνετε την εντολή στο `npx osint-mcp-server` ή στη διαδρομή της τοπικής σας εγκατάστασης.
 
 </details>
 
@@ -580,7 +580,7 @@ src/
 | [cloud-audit-mcp](https://github.com/badchars/cloud-audit-mcp) | Ασφάλεια cloud (AWS/Azure/GCP) | 38 εργαλεία, 60+ έλεγχοι |
 | [github-security-mcp](https://github.com/badchars/github-security-mcp) | Στάση ασφάλειας GitHub | 39 εργαλεία, 45 έλεγχοι |
 | [cve-mcp](https://github.com/badchars/cve-mcp) | Πληροφορίες ευπαθειών | 23 εργαλεία, 5 πηγές |
-| **osint-mcp** | **OSINT & αναγνώριση** | **37 εργαλεία, 12 πηγές** |
+| **osint-mcp-server** | **OSINT & αναγνώριση** | **37 εργαλεία, 12 πηγές** |
 
 ---
 

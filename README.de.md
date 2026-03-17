@@ -27,9 +27,9 @@
 <p align="center">
   <br>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp/main/.github/banner-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp/main/.github/banner-light.svg">
-    <img alt="osint-mcp" src="https://raw.githubusercontent.com/badchars/osint-mcp/main/.github/banner-dark.svg" width="700">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp-server/main/.github/banner-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp-server/main/.github/banner-light.svg">
+    <img alt="osint-mcp-server" src="https://raw.githubusercontent.com/badchars/osint-mcp-server/main/.github/banner-dark.svg" width="700">
   </picture>
 </p>
 
@@ -53,7 +53,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/osint-mcp"><img src="https://img.shields.io/npm/v/osint-mcp.svg" alt="npm"></a>
+  <a href="https://www.npmjs.com/package/osint-mcp-server"><img src="https://img.shields.io/npm/v/osint-mcp-server.svg" alt="npm"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
   <img src="https://img.shields.io/badge/runtime-Bun-f472b6" alt="Bun">
   <img src="https://img.shields.io/badge/protocol-MCP-8b5cf6" alt="MCP">
@@ -83,10 +83,10 @@ Traditioneller OSINT-Workflow:
   Gesamt: 45+ Minuten pro Ziel, meistens mit Kontextwechseln
 ```
 
-**osint-mcp** gibt Ihrem KI-Agenten 37 Tools über 12 Datenquellen via [Model Context Protocol](https://modelcontextprotocol.io). Der Agent fragt alle Quellen parallel ab, korreliert Daten, identifiziert Risiken und präsentiert ein einheitliches Intelligence-Bild &mdash; in einer einzigen Konversation.
+**osint-mcp-server** gibt Ihrem KI-Agenten 37 Tools über 12 Datenquellen via [Model Context Protocol](https://modelcontextprotocol.io). Der Agent fragt alle Quellen parallel ab, korreliert Daten, identifiziert Risiken und präsentiert ein einheitliches Intelligence-Bild &mdash; in einer einzigen Konversation.
 
 ```
-Mit osint-mcp:
+Mit osint-mcp-server:
   Sie: "Mache eine vollständige Aufklärung von target.com"
 
   Agent: → DNS: 4 A-Einträge, 3 MX (Google Workspace), 2 NS
@@ -106,14 +106,14 @@ Mit osint-mcp:
 
 ## Wie es sich unterscheidet
 
-Bestehende OSINT-Tools geben Ihnen Rohdaten von jeweils einer Quelle. osint-mcp gibt Ihrem KI-Agenten die Fähigkeit, **über alle Quellen gleichzeitig zu schlussfolgern**.
+Bestehende OSINT-Tools geben Ihnen Rohdaten von jeweils einer Quelle. osint-mcp-server gibt Ihrem KI-Agenten die Fähigkeit, **über alle Quellen gleichzeitig zu schlussfolgern**.
 
 <table>
 <thead>
 <tr>
 <th></th>
 <th>Traditionelles OSINT</th>
-<th>osint-mcp</th>
+<th>osint-mcp-server</th>
 </tr>
 </thead>
 <tbody>
@@ -155,7 +155,7 @@ Bestehende OSINT-Tools geben Ihnen Rohdaten von jeweils einer Quelle. osint-mcp 
 <tr>
 <td><b>Einrichtung</b></td>
 <td>Jedes Tool installieren, jede Konfiguration verwalten</td>
-<td><code>npx osint-mcp</code> &mdash; ein Befehl, keine Konfiguration</td>
+<td><code>npx osint-mcp-server</code> &mdash; ein Befehl, keine Konfiguration</td>
 </tr>
 </tbody>
 </table>
@@ -167,7 +167,7 @@ Bestehende OSINT-Tools geben Ihnen Rohdaten von jeweils einer Quelle. osint-mcp 
 ### Option 1: npx (keine Installation)
 
 ```bash
-npx osint-mcp
+npx osint-mcp-server
 ```
 
 21 öffentliche OSINT-Tools funktionieren sofort. Keine API-Schlüssel erforderlich.
@@ -175,8 +175,8 @@ npx osint-mcp
 ### Option 2: Klonen
 
 ```bash
-git clone https://github.com/badchars/osint-mcp.git
-cd osint-mcp
+git clone https://github.com/badchars/osint-mcp-server.git
+cd osint-mcp-server
 bun install
 ```
 
@@ -200,10 +200,10 @@ Alle Premium-API-Schlüssel sind optional. Ohne sie erhalten Sie immer noch 21 T
 
 ```bash
 # Mit npx
-claude mcp add osint-mcp -- npx osint-mcp
+claude mcp add osint-mcp-server -- npx osint-mcp-server
 
 # Mit lokalem Klon
-claude mcp add osint-mcp -- bun run /path/to/osint-mcp/src/index.ts
+claude mcp add osint-mcp-server -- bun run /path/to/osint-mcp-server/src/index.ts
 ```
 
 </details>
@@ -218,7 +218,7 @@ Hinzufügen zu `~/Library/Application Support/Claude/claude_desktop_config.json`
   "mcpServers": {
     "osint": {
       "command": "npx",
-      "args": ["-y", "osint-mcp"],
+      "args": ["-y", "osint-mcp-server"],
       "env": {
         "SHODAN_API_KEY": "optional",
         "VT_API_KEY": "optional",
@@ -236,7 +236,7 @@ Hinzufügen zu `~/Library/Application Support/Claude/claude_desktop_config.json`
 <details>
 <summary><b>Cursor / Windsurf / andere MCP-Clients</b></summary>
 
-Gleiches JSON-Konfigurationsformat. Verweisen Sie den Befehl auf `npx osint-mcp` oder Ihren lokalen Installationspfad.
+Gleiches JSON-Konfigurationsformat. Verweisen Sie den Befehl auf `npx osint-mcp-server` oder Ihren lokalen Installationspfad.
 
 </details>
 
@@ -580,7 +580,7 @@ src/
 | [cloud-audit-mcp](https://github.com/badchars/cloud-audit-mcp) | Cloud-Sicherheit (AWS/Azure/GCP) | 38 Tools, 60+ Checks |
 | [github-security-mcp](https://github.com/badchars/github-security-mcp) | GitHub-Sicherheitslage | 39 Tools, 45 Checks |
 | [cve-mcp](https://github.com/badchars/cve-mcp) | Schwachstellen-Intelligenz | 23 Tools, 5 Quellen |
-| **osint-mcp** | **OSINT & Aufklärung** | **37 Tools, 12 Quellen** |
+| **osint-mcp-server** | **OSINT & Aufklärung** | **37 Tools, 12 Quellen** |
 
 ---
 

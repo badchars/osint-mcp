@@ -27,9 +27,9 @@
 <p align="center">
   <br>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp/main/.github/banner-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp/main/.github/banner-light.svg">
-    <img alt="osint-mcp" src="https://raw.githubusercontent.com/badchars/osint-mcp/main/.github/banner-dark.svg" width="700">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp-server/main/.github/banner-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp-server/main/.github/banner-light.svg">
+    <img alt="osint-mcp-server" src="https://raw.githubusercontent.com/badchars/osint-mcp-server/main/.github/banner-dark.svg" width="700">
   </picture>
 </p>
 
@@ -53,7 +53,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/osint-mcp"><img src="https://img.shields.io/npm/v/osint-mcp.svg" alt="npm"></a>
+  <a href="https://www.npmjs.com/package/osint-mcp-server"><img src="https://img.shields.io/npm/v/osint-mcp-server.svg" alt="npm"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
   <img src="https://img.shields.io/badge/runtime-Bun-f472b6" alt="Bun">
   <img src="https://img.shields.io/badge/protocol-MCP-8b5cf6" alt="MCP">
@@ -83,10 +83,10 @@ Tradicionalni OSINT tok rada:
   Ukupno: 45+ minuta po meti, većina toga prebacivanje konteksta
 ```
 
-**osint-mcp** daje vašem AI agentu 37 alata preko 12 izvora podataka putem [Model Context Protocol](https://modelcontextprotocol.io). Agent upituje sve izvore paralelno, korelira podatke, identificira rizike i predstavlja jedinstvenu obavještajnu sliku &mdash; u jednom razgovoru.
+**osint-mcp-server** daje vašem AI agentu 37 alata preko 12 izvora podataka putem [Model Context Protocol](https://modelcontextprotocol.io). Agent upituje sve izvore paralelno, korelira podatke, identificira rizike i predstavlja jedinstvenu obavještajnu sliku &mdash; u jednom razgovoru.
 
 ```
-Sa osint-mcp:
+Sa osint-mcp-server:
   Vi: "Uradi potpuno izviđanje na target.com"
 
   Agent: → DNS: 4 A zapisa, 3 MX (Google Workspace), 2 NS
@@ -106,14 +106,14 @@ Sa osint-mcp:
 
 ## Po čemu se razlikuje
 
-Postojeći OSINT alati daju vam sirove podatke jedan izvor u isto vrijeme. osint-mcp daje vašem AI agentu mogućnost da **rasuđuje preko svih izvora istovremeno**.
+Postojeći OSINT alati daju vam sirove podatke jedan izvor u isto vrijeme. osint-mcp-server daje vašem AI agentu mogućnost da **rasuđuje preko svih izvora istovremeno**.
 
 <table>
 <thead>
 <tr>
 <th></th>
 <th>Tradicionalni OSINT</th>
-<th>osint-mcp</th>
+<th>osint-mcp-server</th>
 </tr>
 </thead>
 <tbody>
@@ -155,7 +155,7 @@ Postojeći OSINT alati daju vam sirove podatke jedan izvor u isto vrijeme. osint
 <tr>
 <td><b>Postavljanje</b></td>
 <td>Instaliraj svaki alat, upravljaj svakom konfiguracijom</td>
-<td><code>npx osint-mcp</code> &mdash; jedna komanda, nula konfiguracije</td>
+<td><code>npx osint-mcp-server</code> &mdash; jedna komanda, nula konfiguracije</td>
 </tr>
 </tbody>
 </table>
@@ -167,7 +167,7 @@ Postojeći OSINT alati daju vam sirove podatke jedan izvor u isto vrijeme. osint
 ### Opcija 1: npx (bez instalacije)
 
 ```bash
-npx osint-mcp
+npx osint-mcp-server
 ```
 
 21 javni OSINT alat radi odmah. Nisu potrebni API ključevi.
@@ -175,8 +175,8 @@ npx osint-mcp
 ### Opcija 2: Kloniraj
 
 ```bash
-git clone https://github.com/badchars/osint-mcp.git
-cd osint-mcp
+git clone https://github.com/badchars/osint-mcp-server.git
+cd osint-mcp-server
 bun install
 ```
 
@@ -200,10 +200,10 @@ Svi premium API ključevi su opcioni. Bez njih, i dalje dobijate 21 alat koji po
 
 ```bash
 # Sa npx
-claude mcp add osint-mcp -- npx osint-mcp
+claude mcp add osint-mcp-server -- npx osint-mcp-server
 
 # Sa lokalnim klonom
-claude mcp add osint-mcp -- bun run /path/to/osint-mcp/src/index.ts
+claude mcp add osint-mcp-server -- bun run /path/to/osint-mcp-server/src/index.ts
 ```
 
 </details>
@@ -218,7 +218,7 @@ Dodajte u `~/Library/Application Support/Claude/claude_desktop_config.json`:
   "mcpServers": {
     "osint": {
       "command": "npx",
-      "args": ["-y", "osint-mcp"],
+      "args": ["-y", "osint-mcp-server"],
       "env": {
         "SHODAN_API_KEY": "optional",
         "VT_API_KEY": "optional",
@@ -236,7 +236,7 @@ Dodajte u `~/Library/Application Support/Claude/claude_desktop_config.json`:
 <details>
 <summary><b>Cursor / Windsurf / drugi MCP klijenti</b></summary>
 
-Isti JSON format konfiguracije. Usmjerite komandu na `npx osint-mcp` ili vašu lokalnu instalacijsku putanju.
+Isti JSON format konfiguracije. Usmjerite komandu na `npx osint-mcp-server` ili vašu lokalnu instalacijsku putanju.
 
 </details>
 
@@ -580,7 +580,7 @@ src/
 | [cloud-audit-mcp](https://github.com/badchars/cloud-audit-mcp) | Cloud sigurnost (AWS/Azure/GCP) | 38 alata, 60+ provjera |
 | [github-security-mcp](https://github.com/badchars/github-security-mcp) | GitHub sigurnosna pozicija | 39 alata, 45 provjera |
 | [cve-mcp](https://github.com/badchars/cve-mcp) | Obavještavanje o ranjivostima | 23 alata, 5 izvora |
-| **osint-mcp** | **OSINT i izviđanje** | **37 alata, 12 izvora** |
+| **osint-mcp-server** | **OSINT i izviđanje** | **37 alata, 12 izvora** |
 
 ---
 

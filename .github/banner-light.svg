@@ -45,7 +45,7 @@
 
   <!-- Title -->
   <text x="175" y="68" font-family="'SF Pro Display', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="#1f2328" letter-spacing="-0.5">
-    osint-mcp
+    osint-mcp-server
   </text>
 
   <!-- Subtitle -->

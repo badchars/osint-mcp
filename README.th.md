@@ -27,9 +27,9 @@
 <p align="center">
   <br>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp/main/.github/banner-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp/main/.github/banner-light.svg">
-    <img alt="osint-mcp" src="https://raw.githubusercontent.com/badchars/osint-mcp/main/.github/banner-dark.svg" width="700">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp-server/main/.github/banner-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp-server/main/.github/banner-light.svg">
+    <img alt="osint-mcp-server" src="https://raw.githubusercontent.com/badchars/osint-mcp-server/main/.github/banner-dark.svg" width="700">
   </picture>
 </p>
 
@@ -53,7 +53,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/osint-mcp"><img src="https://img.shields.io/npm/v/osint-mcp.svg" alt="npm"></a>
+  <a href="https://www.npmjs.com/package/osint-mcp-server"><img src="https://img.shields.io/npm/v/osint-mcp-server.svg" alt="npm"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
   <img src="https://img.shields.io/badge/runtime-Bun-f472b6" alt="Bun">
   <img src="https://img.shields.io/badge/protocol-MCP-8b5cf6" alt="MCP">
@@ -83,10 +83,10 @@
   รวม: 45+ นาทีต่อเป้าหมาย ส่วนใหญ่คือการสลับบริบท
 ```
 
-**osint-mcp** ให้เครื่องมือ 37 รายการจาก 12 แหล่งข้อมูลแก่ตัวแทน AI ของคุณผ่าน [Model Context Protocol](https://modelcontextprotocol.io) ตัวแทนจะสอบถามแหล่งข้อมูลทั้งหมดแบบขนาน เชื่อมโยงข้อมูล ระบุความเสี่ยง และนำเสนอภาพข่าวกรองแบบครบวงจร &mdash; ในการสนทนาเดียว
+**osint-mcp-server** ให้เครื่องมือ 37 รายการจาก 12 แหล่งข้อมูลแก่ตัวแทน AI ของคุณผ่าน [Model Context Protocol](https://modelcontextprotocol.io) ตัวแทนจะสอบถามแหล่งข้อมูลทั้งหมดแบบขนาน เชื่อมโยงข้อมูล ระบุความเสี่ยง และนำเสนอภาพข่าวกรองแบบครบวงจร &mdash; ในการสนทนาเดียว
 
 ```
-ด้วย osint-mcp:
+ด้วย osint-mcp-server:
   คุณ: "ทำการลาดตระเวนแบบเต็มรูปแบบบน target.com"
 
   ตัวแทน: → DNS: 4 A records, 3 MX (Google Workspace), 2 NS
@@ -106,14 +106,14 @@
 
 ## ความแตกต่าง
 
-เครื่องมือ OSINT ที่มีอยู่ให้ข้อมูลดิบจากแหล่งเดียวต่อครั้ง osint-mcp ให้ตัวแทน AI ของคุณความสามารถในการ **วิเคราะห์ข้ามแหล่งข้อมูลทั้งหมดพร้อมกัน**
+เครื่องมือ OSINT ที่มีอยู่ให้ข้อมูลดิบจากแหล่งเดียวต่อครั้ง osint-mcp-server ให้ตัวแทน AI ของคุณความสามารถในการ **วิเคราะห์ข้ามแหล่งข้อมูลทั้งหมดพร้อมกัน**
 
 <table>
 <thead>
 <tr>
 <th></th>
 <th>OSINT แบบดั้งเดิม</th>
-<th>osint-mcp</th>
+<th>osint-mcp-server</th>
 </tr>
 </thead>
 <tbody>
@@ -155,7 +155,7 @@
 <tr>
 <td><b>การตั้งค่า</b></td>
 <td>ติดตั้งเครื่องมือแต่ละรายการ, จัดการการกำหนดค่าแต่ละรายการ</td>
-<td><code>npx osint-mcp</code> &mdash; คำสั่งเดียว, ไม่ต้องกำหนดค่า</td>
+<td><code>npx osint-mcp-server</code> &mdash; คำสั่งเดียว, ไม่ต้องกำหนดค่า</td>
 </tr>
 </tbody>
 </table>
@@ -167,7 +167,7 @@
 ### ตัวเลือก 1: npx (ไม่ต้องติดตั้ง)
 
 ```bash
-npx osint-mcp
+npx osint-mcp-server
 ```
 
 21 เครื่องมือ OSINT สาธารณะทำงานทันที ไม่ต้องใช้คีย์ API
@@ -175,8 +175,8 @@ npx osint-mcp
 ### ตัวเลือก 2: โคลน
 
 ```bash
-git clone https://github.com/badchars/osint-mcp.git
-cd osint-mcp
+git clone https://github.com/badchars/osint-mcp-server.git
+cd osint-mcp-server
 bun install
 ```
 
@@ -200,10 +200,10 @@ export CENSYS_API_SECRET=your-secret     # จำเป็นพร้อม CEN
 
 ```bash
 # ด้วย npx
-claude mcp add osint-mcp -- npx osint-mcp
+claude mcp add osint-mcp-server -- npx osint-mcp-server
 
 # ด้วยโคลนภายในเครื่อง
-claude mcp add osint-mcp -- bun run /path/to/osint-mcp/src/index.ts
+claude mcp add osint-mcp-server -- bun run /path/to/osint-mcp-server/src/index.ts
 ```
 
 </details>
@@ -218,7 +218,7 @@ claude mcp add osint-mcp -- bun run /path/to/osint-mcp/src/index.ts
   "mcpServers": {
     "osint": {
       "command": "npx",
-      "args": ["-y", "osint-mcp"],
+      "args": ["-y", "osint-mcp-server"],
       "env": {
         "SHODAN_API_KEY": "optional",
         "VT_API_KEY": "optional",
@@ -236,7 +236,7 @@ claude mcp add osint-mcp -- bun run /path/to/osint-mcp/src/index.ts
 <details>
 <summary><b>Cursor / Windsurf / ไคลเอนต์ MCP อื่นๆ</b></summary>
 
-รูปแบบการกำหนดค่า JSON เดียวกัน ชี้คำสั่งไปที่ `npx osint-mcp` หรือเส้นทางการติดตั้งภายในเครื่องของคุณ
+รูปแบบการกำหนดค่า JSON เดียวกัน ชี้คำสั่งไปที่ `npx osint-mcp-server` หรือเส้นทางการติดตั้งภายในเครื่องของคุณ
 
 </details>
 
@@ -580,7 +580,7 @@ src/
 | [cloud-audit-mcp](https://github.com/badchars/cloud-audit-mcp) | ความปลอดภัยคลาวด์ (AWS/Azure/GCP) | 38 เครื่องมือ, 60+ การตรวจสอบ |
 | [github-security-mcp](https://github.com/badchars/github-security-mcp) | ท่าทางความปลอดภัย GitHub | 39 เครื่องมือ, 45 การตรวจสอบ |
 | [cve-mcp](https://github.com/badchars/cve-mcp) | ข่าวกรองช่องโหว่ | 23 เครื่องมือ, 5 แหล่ง |
-| **osint-mcp** | **OSINT และการลาดตระเวน** | **37 เครื่องมือ, 12 แหล่ง** |
+| **osint-mcp-server** | **OSINT และการลาดตระเวน** | **37 เครื่องมือ, 12 แหล่ง** |
 
 ---
 

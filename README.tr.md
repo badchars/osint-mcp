@@ -27,9 +27,9 @@
 <p align="center">
   <br>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp/main/.github/banner-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp/main/.github/banner-light.svg">
-    <img alt="osint-mcp" src="https://raw.githubusercontent.com/badchars/osint-mcp/main/.github/banner-dark.svg" width="700">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp-server/main/.github/banner-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp-server/main/.github/banner-light.svg">
+    <img alt="osint-mcp-server" src="https://raw.githubusercontent.com/badchars/osint-mcp-server/main/.github/banner-dark.svg" width="700">
   </picture>
 </p>
 
@@ -53,7 +53,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/osint-mcp"><img src="https://img.shields.io/npm/v/osint-mcp.svg" alt="npm"></a>
+  <a href="https://www.npmjs.com/package/osint-mcp-server"><img src="https://img.shields.io/npm/v/osint-mcp-server.svg" alt="npm"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
   <img src="https://img.shields.io/badge/runtime-Bun-f472b6" alt="Bun">
   <img src="https://img.shields.io/badge/protocol-MCP-8b5cf6" alt="MCP">
@@ -83,10 +83,10 @@ Geleneksel OSINT iş akışı:
   Toplam: Hedef başına 45+ dakika, büyük kısmı bağlam değiştirmeyle geçer
 ```
 
-**osint-mcp**, yapay zeka ajanınıza [Model Context Protocol](https://modelcontextprotocol.io) aracılığıyla 12 veri kaynağında 37 araç sunar. Ajan tüm kaynakları paralel olarak sorgular, verileri ilişkilendirir, riskleri tespit eder ve tek bir konuşmada birleşik bir istihbarat tablosu sunar.
+**osint-mcp-server**, yapay zeka ajanınıza [Model Context Protocol](https://modelcontextprotocol.io) aracılığıyla 12 veri kaynağında 37 araç sunar. Ajan tüm kaynakları paralel olarak sorgular, verileri ilişkilendirir, riskleri tespit eder ve tek bir konuşmada birleşik bir istihbarat tablosu sunar.
 
 ```
-osint-mcp ile:
+osint-mcp-server ile:
   Siz: "target.com üzerinde tam keşif yap"
 
   Ajan: → DNS: 4 A kaydı, 3 MX (Google Workspace), 2 NS
@@ -108,14 +108,14 @@ osint-mcp ile:
 
 ## Farkımız
 
-Mevcut OSINT araçları size tek seferde tek bir kaynaktan ham veri verir. osint-mcp, yapay zeka ajanınıza **tüm kaynaklar üzerinde eş zamanlı akıl yürütme** yeteneği kazandırır.
+Mevcut OSINT araçları size tek seferde tek bir kaynaktan ham veri verir. osint-mcp-server, yapay zeka ajanınıza **tüm kaynaklar üzerinde eş zamanlı akıl yürütme** yeteneği kazandırır.
 
 <table>
 <thead>
 <tr>
 <th></th>
 <th>Geleneksel OSINT</th>
-<th>osint-mcp</th>
+<th>osint-mcp-server</th>
 </tr>
 </thead>
 <tbody>
@@ -157,7 +157,7 @@ Mevcut OSINT araçları size tek seferde tek bir kaynaktan ham veri verir. osint
 <tr>
 <td><b>Kurulum</b></td>
 <td>Her aracı ayrı kur, her yapılandırmayı ayrı yönet</td>
-<td><code>npx osint-mcp</code> &mdash; tek komut, sıfır yapılandırma</td>
+<td><code>npx osint-mcp-server</code> &mdash; tek komut, sıfır yapılandırma</td>
 </tr>
 </tbody>
 </table>
@@ -169,7 +169,7 @@ Mevcut OSINT araçları size tek seferde tek bir kaynaktan ham veri verir. osint
 ### Seçenek 1: npx (kurulum gerektirmez)
 
 ```bash
-npx osint-mcp
+npx osint-mcp-server
 ```
 
 21 genel OSINT aracı anında çalışır. API anahtarı gerekmez.
@@ -177,8 +177,8 @@ npx osint-mcp
 ### Seçenek 2: Klonlama
 
 ```bash
-git clone https://github.com/badchars/osint-mcp.git
-cd osint-mcp
+git clone https://github.com/badchars/osint-mcp-server.git
+cd osint-mcp-server
 bun install
 ```
 
@@ -202,10 +202,10 @@ Tüm premium API anahtarları opsiyoneldir. Bunlar olmadan bile DNS, WHOIS, crt.
 
 ```bash
 # npx ile
-claude mcp add osint-mcp -- npx osint-mcp
+claude mcp add osint-mcp-server -- npx osint-mcp-server
 
 # Yerel klonla
-claude mcp add osint-mcp -- bun run /path/to/osint-mcp/src/index.ts
+claude mcp add osint-mcp-server -- bun run /path/to/osint-mcp-server/src/index.ts
 ```
 
 </details>
@@ -220,7 +220,7 @@ claude mcp add osint-mcp -- bun run /path/to/osint-mcp/src/index.ts
   "mcpServers": {
     "osint": {
       "command": "npx",
-      "args": ["-y", "osint-mcp"],
+      "args": ["-y", "osint-mcp-server"],
       "env": {
         "SHODAN_API_KEY": "optional",
         "VT_API_KEY": "optional",
@@ -238,7 +238,7 @@ claude mcp add osint-mcp -- bun run /path/to/osint-mcp/src/index.ts
 <details>
 <summary><b>Cursor / Windsurf / diğer MCP istemcileri</b></summary>
 
-Aynı JSON yapılandırma formatı. Komutu `npx osint-mcp` veya yerel kurulum yolunuza yönlendirin.
+Aynı JSON yapılandırma formatı. Komutu `npx osint-mcp-server` veya yerel kurulum yolunuza yönlendirin.
 
 </details>
 
@@ -582,7 +582,7 @@ src/
 | [cloud-audit-mcp](https://github.com/badchars/cloud-audit-mcp) | Bulut güvenliği (AWS/Azure/GCP) | 38 araç, 60+ kontrol |
 | [github-security-mcp](https://github.com/badchars/github-security-mcp) | GitHub güvenlik duruşu | 39 araç, 45 kontrol |
 | [cve-mcp](https://github.com/badchars/cve-mcp) | Zafiyet istihbaratı | 23 araç, 5 kaynak |
-| **osint-mcp** | **OSINT ve keşif** | **37 araç, 12 kaynak** |
+| **osint-mcp-server** | **OSINT ve keşif** | **37 araç, 12 kaynak** |
 
 ---
 

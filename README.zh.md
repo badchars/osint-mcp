@@ -27,9 +27,9 @@
 <p align="center">
   <br>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp/main/.github/banner-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp/main/.github/banner-light.svg">
-    <img alt="osint-mcp" src="https://raw.githubusercontent.com/badchars/osint-mcp/main/.github/banner-dark.svg" width="700">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp-server/main/.github/banner-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp-server/main/.github/banner-light.svg">
+    <img alt="osint-mcp-server" src="https://raw.githubusercontent.com/badchars/osint-mcp-server/main/.github/banner-dark.svg" width="700">
   </picture>
 </p>
 
@@ -53,7 +53,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/osint-mcp"><img src="https://img.shields.io/npm/v/osint-mcp.svg" alt="npm"></a>
+  <a href="https://www.npmjs.com/package/osint-mcp-server"><img src="https://img.shields.io/npm/v/osint-mcp-server.svg" alt="npm"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
   <img src="https://img.shields.io/badge/runtime-Bun-f472b6" alt="Bun">
   <img src="https://img.shields.io/badge/protocol-MCP-8b5cf6" alt="MCP">
@@ -83,10 +83,10 @@
   总计：每个目标 45 分钟以上，大部分时间在切换上下文
 ```
 
-**osint-mcp** 通过 [Model Context Protocol](https://modelcontextprotocol.io) 为您的 AI 智能体提供跨 12 个数据源的 37 个工具。智能体并行查询所有数据源、关联数据、识别风险，并在单次对话中呈现统一的情报全景。
+**osint-mcp-server** 通过 [Model Context Protocol](https://modelcontextprotocol.io) 为您的 AI 智能体提供跨 12 个数据源的 37 个工具。智能体并行查询所有数据源、关联数据、识别风险，并在单次对话中呈现统一的情报全景。
 
 ```
-使用 osint-mcp：
+使用 osint-mcp-server：
   你："对 target.com 做一次全面侦察"
 
   智能体：→ DNS：4 条 A 记录、3 条 MX（Google Workspace）、2 条 NS
@@ -107,14 +107,14 @@
 
 ## 有何不同
 
-现有 OSINT 工具每次只从单一来源提供原始数据。osint-mcp 让您的 AI 智能体能够**跨所有数据源同时推理分析**。
+现有 OSINT 工具每次只从单一来源提供原始数据。osint-mcp-server 让您的 AI 智能体能够**跨所有数据源同时推理分析**。
 
 <table>
 <thead>
 <tr>
 <th></th>
 <th>传统 OSINT</th>
-<th>osint-mcp</th>
+<th>osint-mcp-server</th>
 </tr>
 </thead>
 <tbody>
@@ -156,7 +156,7 @@
 <tr>
 <td><b>安装配置</b></td>
 <td>逐一安装每个工具，逐一管理配置</td>
-<td><code>npx osint-mcp</code> &mdash; 一条命令，零配置</td>
+<td><code>npx osint-mcp-server</code> &mdash; 一条命令，零配置</td>
 </tr>
 </tbody>
 </table>
@@ -168,7 +168,7 @@
 ### 方式一：npx（免安装）
 
 ```bash
-npx osint-mcp
+npx osint-mcp-server
 ```
 
 21 个公共 OSINT 工具即刻可用，无需 API 密钥。
@@ -176,8 +176,8 @@ npx osint-mcp
 ### 方式二：克隆仓库
 
 ```bash
-git clone https://github.com/badchars/osint-mcp.git
-cd osint-mcp
+git clone https://github.com/badchars/osint-mcp-server.git
+cd osint-mcp-server
 bun install
 ```
 
@@ -201,10 +201,10 @@ export CENSYS_API_SECRET=your-secret     # 需与 CENSYS_API_ID 配合使用
 
 ```bash
 # 使用 npx
-claude mcp add osint-mcp -- npx osint-mcp
+claude mcp add osint-mcp-server -- npx osint-mcp-server
 
 # 使用本地克隆
-claude mcp add osint-mcp -- bun run /path/to/osint-mcp/src/index.ts
+claude mcp add osint-mcp-server -- bun run /path/to/osint-mcp-server/src/index.ts
 ```
 
 </details>
@@ -219,7 +219,7 @@ claude mcp add osint-mcp -- bun run /path/to/osint-mcp/src/index.ts
   "mcpServers": {
     "osint": {
       "command": "npx",
-      "args": ["-y", "osint-mcp"],
+      "args": ["-y", "osint-mcp-server"],
       "env": {
         "SHODAN_API_KEY": "optional",
         "VT_API_KEY": "optional",
@@ -237,7 +237,7 @@ claude mcp add osint-mcp -- bun run /path/to/osint-mcp/src/index.ts
 <details>
 <summary><b>Cursor / Windsurf / 其他 MCP 客户端</b></summary>
 
-JSON 配置格式相同。将命令指向 `npx osint-mcp` 或您的本地安装路径。
+JSON 配置格式相同。将命令指向 `npx osint-mcp-server` 或您的本地安装路径。
 
 </details>
 
@@ -581,7 +581,7 @@ src/
 | [cloud-audit-mcp](https://github.com/badchars/cloud-audit-mcp) | 云安全（AWS/Azure/GCP） | 38 个工具，60+ 项检查 |
 | [github-security-mcp](https://github.com/badchars/github-security-mcp) | GitHub 安全态势 | 39 个工具，45 项检查 |
 | [cve-mcp](https://github.com/badchars/cve-mcp) | 漏洞情报 | 23 个工具，5 个数据源 |
-| **osint-mcp** | **开源情报与侦察** | **37 个工具，12 个数据源** |
+| **osint-mcp-server** | **开源情报与侦察** | **37 个工具，12 个数据源** |
 
 ---
 

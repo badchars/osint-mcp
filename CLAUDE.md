@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 OSINT MCP — the fifth project in the MCP security suite. Provides AI agents with access to OSINT data sources: Shodan, Censys, VirusTotal, SecurityTrails + public DNS/WHOIS/crt.sh/Wayback/BGP/IP geolocation.
 
-Published as `npx osint-mcp` on npm. Public tools work without API keys; paid providers (Shodan, VT, SecurityTrails, Censys) require env vars and return descriptive messages when keys are missing.
+Published as `npx osint-mcp-server` on npm. Public tools work without API keys; paid providers (Shodan, VT, SecurityTrails, Censys) require env vars and return descriptive messages when keys are missing.
 
 ## Build & Development Commands
 
@@ -99,7 +99,7 @@ Provider prefix + action: `shodan_search`, `shodan_exploit`, `vt_domain`, `vt_ip
 ## npm Package Configuration
 
 - `"type": "module"` — ESM only
-- `"bin": { "osint-mcp": "dist/index.js" }` — enables npx
+- `"bin": { "osint-mcp-server": "dist/index.js" }` — enables npx
 - `"files": ["dist/"]` — only ship compiled JS
 - `"dependencies"` — only `@modelcontextprotocol/sdk` + `zod`
 - Two tsconfigs: `tsconfig.json` (dev, Bun types) and `tsconfig.build.json` (publish, Node types)
