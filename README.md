@@ -49,7 +49,8 @@
   <a href="#what-the-ai-can-do">What The AI Can Do</a> &bull;
   <a href="#tools-reference-37-tools">Tools (37)</a> &bull;
   <a href="#data-sources-12">Data Sources</a> &bull;
-  <a href="#architecture">Architecture</a>
+  <a href="#architecture">Architecture</a> &bull;
+  <a href="CHANGELOG.md">Changelog</a>
 </p>
 
 <p align="center">
