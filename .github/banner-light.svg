@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="180" viewBox="0 0 700 180">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f6f8fa;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0891b2" />
+      <stop offset="50%" style="stop-color:#0284c7" />
+      <stop offset="100%" style="stop-color:#7c3aed" />
+    </linearGradient>
+    <linearGradient id="icon-fill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0891b2" />
+      <stop offset="100%" style="stop-color:#0284c7" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="180" rx="12" fill="url(#bg)" stroke="#d0d7de" stroke-width="1"/>
+
+  <!-- Border accent line -->
+  <rect x="0" y="0" width="700" height="3" rx="1.5" fill="url(#accent)" />
+
+  <!-- OSINT Globe + Magnifying glass icon -->
+  <g transform="translate(55, 32)">
+    <!-- Globe outer circle -->
+    <circle cx="52" cy="55" r="42" fill="url(#icon-fill)" opacity="0.08" stroke="url(#icon-fill)" stroke-width="2"/>
+    <!-- Globe horizontal lines -->
+    <ellipse cx="52" cy="40" rx="28" ry="8" fill="none" stroke="url(#icon-fill)" stroke-width="1.2" opacity="0.35"/>
+    <ellipse cx="52" cy="55" rx="42" ry="10" fill="none" stroke="url(#icon-fill)" stroke-width="1" opacity="0.25"/>
+    <ellipse cx="52" cy="70" rx="28" ry="8" fill="none" stroke="url(#icon-fill)" stroke-width="1.2" opacity="0.35"/>
+    <!-- Globe vertical meridian -->
+    <ellipse cx="52" cy="55" rx="15" ry="42" fill="none" stroke="url(#icon-fill)" stroke-width="1.2" opacity="0.4"/>
+    <!-- Globe center vertical line -->
+    <line x1="52" y1="13" x2="52" y2="97" stroke="url(#icon-fill)" stroke-width="1" opacity="0.25"/>
+    <!-- Magnifying glass circle -->
+    <circle cx="76" cy="76" r="16" fill="none" stroke="url(#icon-fill)" stroke-width="2.5" opacity="0.85"/>
+    <!-- Magnifying glass handle -->
+    <line x1="87" y1="87" x2="100" y2="100" stroke="url(#icon-fill)" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+    <!-- Scan dot inside magnifier -->
+    <circle cx="76" cy="76" r="4" fill="url(#icon-fill)" opacity="0.6"/>
+    <!-- Pulse rings -->
+    <circle cx="76" cy="76" r="9" fill="none" stroke="url(#icon-fill)" stroke-width="1" stroke-dasharray="3 3" opacity="0.35"/>
+  </g>
+
+  <!-- Title -->
+  <text x="175" y="68" font-family="'SF Pro Display', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="#1f2328" letter-spacing="-0.5">
+    osint-mcp
+  </text>
+
+  <!-- Subtitle -->
+  <text x="175" y="98" font-family="'SF Pro Text', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="15" fill="#656d76" letter-spacing="0.2">
+    OSINT &amp; reconnaissance intelligence for AI agents
+  </text>
+
+  <!-- Stats pills -->
+  <g transform="translate(175, 118)">
+    <!-- 37 Tools -->
+    <rect x="0" y="0" width="78" height="26" rx="13" fill="#0891b2" opacity="0.1" stroke="#0891b2" stroke-width="1" stroke-opacity="0.3"/>
+    <text x="39" y="17" font-family="'SF Mono', 'Cascadia Code', monospace" font-size="11" fill="#0891b2" text-anchor="middle" font-weight="600">37 tools</text>
+
+    <!-- 12 Sources -->
+    <rect x="90" y="0" width="92" height="26" rx="13" fill="#0284c7" opacity="0.1" stroke="#0284c7" stroke-width="1" stroke-opacity="0.3"/>
+    <text x="136" y="17" font-family="'SF Mono', 'Cascadia Code', monospace" font-size="11" fill="#0284c7" text-anchor="middle" font-weight="600">12 sources</text>
+
+    <!-- MCP -->
+    <rect x="194" y="0" width="58" height="26" rx="13" fill="#7c3aed" opacity="0.1" stroke="#7c3aed" stroke-width="1" stroke-opacity="0.3"/>
+    <text x="223" y="17" font-family="'SF Mono', 'Cascadia Code', monospace" font-size="11" fill="#7c3aed" text-anchor="middle" font-weight="600">MCP</text>
+
+    <!-- 2 deps -->
+    <rect x="264" y="0" width="78" height="26" rx="13" fill="#16a34a" opacity="0.1" stroke="#16a34a" stroke-width="1" stroke-opacity="0.3"/>
+    <text x="303" y="17" font-family="'SF Mono', 'Cascadia Code', monospace" font-size="11" fill="#16a34a" text-anchor="middle" font-weight="600">2 deps</text>
+  </g>
+</svg>
