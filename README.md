@@ -1,4 +1,10 @@
 <p align="center">
+
+**English · [Türkçe](README.tr.md) · [Français](README.fr.md) · [中文](README.zh.md) · [العربية](README.ar.md) · [Русский](README.ru.md) · [हिन्दी](README.hi.md)**
+
+</p>
+
+<p align="center">
   <br>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/badchars/osint-mcp/main/.github/banner-dark.svg">
